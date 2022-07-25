@@ -1,0 +1,20 @@
+import datetimw
+
+def wish():
+    hour = int(datetime.datetime.now().hour)
+    if hour>=0 and hour<12:
+        speak("good morning sir!")
+
+    elif hour>=12 and hour<18:
+        speak("good afternoon sir!")
+
+    else:
+        speak("good evening sir!")
+    speak("helo sir, nice to meet you , i am jarvis!")
+
+
+if __name__ == "__main__":
+    wish()
+    while True:
+        query = takecommand().lower()
+        pass

@@ -41,11 +41,29 @@ def wish():
 
     else:
         speak("good evening sir!")
-    speak("helo sir, nice to meet you , i am jarvis!")
+    speak("helo sir, i am jarvis!")
+
+
+
 
 
 if __name__ == "__main__":
     wish()
     while True:
         query = takecommand().lower()
-        pass
+        if 'hello jarvis' in query:
+            speak("hello sir")
+
+        elif 'who are you' in query:
+            speak("i am jarvis , your voice assistent sir!")
+
+        elif 'who developed you' in query:
+            speak("i developed by  name , he is a developer")
+
+        elif 'tell me the time' in query:
+            strtime = datetime.datetime.now().strftime("%H:%M:%S")
+            speak(f"the time is {strtime} sir!")
+        
+        elif 'go to sleep' in query:
+            speak("ok, i go for sleep")
+            exit()

@@ -1,6 +1,8 @@
 import pyttsx3 #pip install pyttsx3
 import speech_recognition as sr #pip install speechRecognition
 import datetime
+import webbrowser
+import wikipedia #pip install wikipedia
 
 
 
@@ -43,10 +45,6 @@ def wish():
         speak("good evening sir!")
     speak("helo sir, i am jarvis!")
 
-
-
-
-
 if __name__ == "__main__":
     wish()
     while True:
@@ -67,3 +65,18 @@ if __name__ == "__main__":
         elif 'go to sleep' in query:
             speak("ok, i go for sleep")
             exit()
+
+        elif 'open google' in query:
+            webbrowser.open("google.com")
+        
+        elif 'open youtube' in query:
+            webbrowser.open("youtube.com")
+
+        elif 'wikipedia' in query:
+            speak('searching wikipedia..')
+            query = query.replace("wikipedia", "")
+            result = wikipedia.summary(query, sentences = 2)
+            speak("according to wikipedia")
+            print(result)
+            speak(result)
+        

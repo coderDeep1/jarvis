@@ -3,7 +3,7 @@ import speech_recognition as sr #pip install speechRecognition
 import datetime
 import webbrowser
 import wikipedia #pip install wikipedia
-
+import os
 
 
 engine = pyttsx3.init('sapi5')
@@ -79,4 +79,18 @@ if __name__ == "__main__":
             speak("according to wikipedia")
             print(result)
             speak(result)
+        
+        elif 'open vs code' in query:
+            code_path = "I:\\Microsoft VS Code\\Code.exe"
+            os.startfile(code_path)
+
+        elif 'open chrome' in query:
+            chrome = "H:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+            os.startfile(chrome)
+
+        elif 'play music' in query:
+            music = 'H:\\Users\\windowssd10\\Music'
+            song = os.listdir(music)
+            os.startfile(os.path.join(music,song[0]))
+
         

@@ -4,6 +4,7 @@ import datetime
 import webbrowser
 import wikipedia #pip install wikipedia
 import os
+import random
 
 
 engine = pyttsx3.init('sapi5')
@@ -89,8 +90,9 @@ if __name__ == "__main__":
             os.startfile(chrome)
 
         elif 'play music' in query:
-            music = 'H:\\Users\\windowssd10\\Music'
+            music = "L:\\videos"
             song = os.listdir(music)
-            os.startfile(os.path.join(music,song[0]))
+            s = random.randint(0,3)
+            os.startfile(os.path.join(music,song[s]))
 
         
